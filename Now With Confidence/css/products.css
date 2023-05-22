@@ -1,0 +1,94 @@
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px 300px 50px 300px;
+}
+
+.product {
+  width: calc(40% - 10px);
+  margin-top: 50px;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.product:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.product img {
+  width: 100%;
+  object-fit: contain;
+}
+.product h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.product .btn{
+    background-color: #535353;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+}
+
+/*--- MOBILE STYLE ---*/
+@media screen and (max-width: 380px) {
+  .product {
+    width: calc(100%);
+    margin-bottom: 0;
+  }
+  .product-container {
+  	margin: 30px 50px 30px 50px;
+  }
+}
+
+/*--- TABLET STYLE ---*/
+@media (min-width: 381px) and (max-width: 649px) {
+  .product {
+    width: calc(50% - 15px);
+    margin-bottom: 0;
+  }
+  .product-container {
+  	margin: 30px 50px 30px 50px;
+  }
+}
+@media (min-width: 650px) and (max-width: 949px) {
+  .product {
+    width: calc(40% - 15px);
+    margin-bottom: 0;
+  }
+  .product-container {
+  	margin: 30px 100px 50px 100px;
+  }
+}
+
+/*--- DESKTOP STYLE ---*/
+@media screen and (min-width: 950px) {
+  .product {
+    width: calc(25% - 15px);
+    margin-bottom: 0;
+  }
+  .product-container {
+  	margin: 30px 200px 50px 200px;
+  }
+}

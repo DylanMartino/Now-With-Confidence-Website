@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Now With Confidence - Contact Us</title>
+    <meta name="description" content="Assignment 2">
+    <meta name="author" content="Dylan Martin - 20518465">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/contact-us.css">
+	<link rel="stylesheet" href="./css/mobile-nav.css">
+	<script src="./js/contact-us.js"></script>
+	<script src="./js/mobile-nav.js"></script>
+	
+<!-------------------------------------------------------------------------- START OF HEADER/NAVIGATION SECTION -------------------------->
+  </head>
+  <body>
+<div class="header">
+	<nav class="navi">
+	<div class="mobile-nav-btn" onclick="openNav()">&#9776;</div>
+    <ul class="navi-list">
+		<li><a href="./index.html">HOME</a></li>
+        <li class="centered-logo">
+          <a href="/">
+             <img class="top_logo" src="./images/logo-b.png" alt=""/>
+          </a>
+        </li>
+        <li><a href="#">ACCOUNT</a></li>
+        <li><a href="./cart.html">CART</a></li>
+    </ul>
+  <div class="overlay" id="navbar">
+  		<div href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</div>
+  		<div class="overlay-content">
+			<img class="overlay_logo" src="images/logo-w.png" alt=""/>
+			<div class="nav-links">
+	        	<a class="home" href="./index.html">HOME</a>
+            	<a class="account" href="./index.html">ACCOUNT</a>
+            	<a class="cart" href="./cart.html">CART</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>
+<!-------------------------------------------------------------------------- END OF HEADER/NAVIGATION SECTION -------------------------->
+
+<!-------------------------------------------------------------------------- START OF CONTACT FORM SECTION ----------------------------->
+<!------------------------------------- EMBEDDED IFRAME GOOGLE MAP ---------------------------->
+		<div class="contact-container">
+		  <div class="left-col">
+			  <iframe class="left-col" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0786242509266!2d175.2782120158364!3d-37.788197140354846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6d18a57fa16281%3A0x72b05e2e8812d179!2sWintec%20Te%20P%C5%ABkenga%20City%20Campus!5e0!3m2!1sen!2snz!4v1681011823855!5m2!1sen!2snz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		  </div>
+			
+<!------------------------------------- CONTACT-US FORM -------------------------------------->
+  		<div class="right-col">
+		<h1>Contact us</h1>
+    		<p>Send us a message and we'll get back to you as soon as we can!</p>
+    	<form id="contact-form">
+      		<label for="name">Full name</label>
+  			<input type="text" id="name" name="name" placeholder="Your Full Name">
+      		<label for="email">Email Address</label>
+  			<input type="email" id="email" name="email" placeholder="Your Email Address">
+      		<label for="message">Message</label>
+  			<textarea rows="6" placeholder="Your Message" id="message" name="message"></textarea>
+      		<button type="submit" id="submit" name="submit" onClick="return validateForm()">Send</button>
+			<button type="reset" id="reset" name="reset" onClick="reset()">Reset Form</button>
+		</form>
+	</div>
+</div>
+<!-------------------------------------------------------------------------- END OF CONTACT FORM SECTION -------------------------->
+
+<!-------------------------------------------------------------------------- START OF FOOTER SECTION ------------------------------>
+<footer>
+  <div class="logo">
+    <img src="./images/logo-w.png" alt="Footer Logo">
+  </div>
+  <div class="content">
+    <div class="links">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+		<li><a href="#">T&amp;C's</a></li>
+      </ul>
+    </div>
+	  <hr>
+    <div class="address">
+      <div class="address-column">
+        <h2>VISIT OUR STORE</h2>
+        <p>303 Victoria Street
+			<br>Hamilton, 3204
+			<br>Waikato
+			<br>New Zealand</p>
+      </div>
+      <div class="map-column">
+        <img src="images/map.png" alt="Footer Map">
+      </div>
+    </div>
+  </div>
+</footer>
+<!-------------------------------------------------------------------------- END OF FOOTER SECTION ------------------------------>
+  </body>
+</html>
