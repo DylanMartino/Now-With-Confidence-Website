@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./css/mobile-nav.css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/products.css">
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!-- Include Vue.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.min.js"></script> <!-- Include Vue.js library -->
 </head>
 <body>
   <div id="app">
@@ -88,14 +88,14 @@
             <p>303 Victoria Street<br>Hamilton, 3204<br>Waikato<br>New Zealand</p>
           </div>
           <div class="map-column">
-            <img src="images/map.png" alt="Footer Map">
+            <img src="./images/map.png" alt="Footer Map">
           </div>
         </div>
       </div>
     </footer>
   </template>
 
-  <!-- Vue.js App -->
+  <!------------------------------------------------------------------------------------------------------------ Vue Components  ------------------------------->
   <script>
     Vue.component('header-component', {
       template: '#header-template',
@@ -133,47 +133,47 @@
             },
             {
               id: 3,
-              name: 'Cashmere V Neck Cardigan',
-              price: '$49.99',
-              image: './images/products/product-2.png'
+              name: 'Leather Bomber Jacket',
+              price: '$119.99',
+              image: './images/products/product-3.png'
             },
             {
               id: 4,
-              name: 'Cashmere V Neck Cardigan',
-              price: '$49.99',
-              image: './images/products/product-2.png'
+              name: 'Single Breasted Plaid Coat',
+              price: '$89.99',
+              image: './images/products/product-4.png'
             },
             {
               id: 5,
-              name: 'Cashmere V Neck Cardigan',
-              price: '$49.99',
-              image: './images/products/product-2.png'
+              name: 'Bliss Faux Fur Coat',
+              price: '$59.99',
+              image: './images/products/product-5.png'
             },
             {
               id: 6,
-              name: 'Cashmere V Neck Cardigan',
-              price: '$49.99',
-              image: './images/products/product-2.png'
+              name: 'Cream Long Sweater',
+              price: '$44.99',
+              image: './images/products/product-6.png'
             },
             {
               id: 7,
-              name: 'Cashmere V Neck Cardigan',
-              price: '$49.99',
-              image: './images/products/product-2.png'
+              name: 'Checked Shacket Coat',
+              price: '$74.99',
+              image: './images/products/product-7.png'
             },
             {
               id: 8,
-              name: 'Cashmere V Neck Cardigan',
+              name: 'Grey Faux Fur Coat',
               price: '$49.99',
-              image: './images/products/product-2.png'
+              image: './images/products/product-8.png'
             },
-            // Add more products here...
+            // Can add more products here.
           ]
         };
       },
       methods: {
         addToCart(productId) {
-          // Handle adding the product to the cart
+          // Handles adding the product to the cart.
           window.location.href = './cart.html';
         }
       }
