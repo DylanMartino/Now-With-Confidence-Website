@@ -8,13 +8,42 @@
   <link rel="stylesheet" href="./css/mobile-nav.css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/products.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.min.js"></script> <!-- Include Vue.js library -->
+  <script src="./js/mobile-nav.js"></script>
+  <!---------------------------------------------------------------------------- Vue.js library ----------------------->
+  <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
 </head>
-<body>
-  <div id="app">
-    <!-- Header/Navigation component -->
-    <header-component></header-component>
 
+<body>
+	
+<div class="header">
+	<nav class="navi">
+	<div class="mobile-nav-btn" onclick="openNav()">&#9776;</div>
+    <ul class="navi-list">
+		<li><a href="./index.html">HOME</a></li>
+        <li class="centered-logo">
+          <a href="/">
+             <img class="top_logo" src="./images/logo-b.png" alt=""/>
+          </a>
+        </li>
+        <li><a href="#">ACCOUNT</a></li>
+        <li><a href="./cart.html">CART</a></li>
+    </ul>
+  <div class="overlay" id="navbar">
+  		<div href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</div>
+  		<div class="overlay-content">
+			<img class="overlay_logo" src="images/logo-w.png" alt=""/>
+			<div class="nav-links">
+	        	<a class="home" href="./index.html">HOME</a>
+            	<a class="account" href="./index.html">ACCOUNT</a>
+            	<a class="cart" href="./cart.html">CART</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>
+	
+<!--------------------------------------------------------------------------------- Vue App ------------------------------>
+  <div id="app">
     <!-- Products component -->
     <products-component></products-component>
 
@@ -22,35 +51,8 @@
     <footer-component></footer-component>
   </div>
 
-  <template id="header-template">
-    <div class="header">
-      <nav class="navi">
-        <div class="mobile-nav-btn" @click="openNav">&#9776;</div>
-        <ul class="navi-list">
-          <li><a href="./index.html">HOME</a></li>
-          <li class="centered-logo">
-            <a href="/">
-              <img class="top_logo" src="./images/logo-b.png" alt=""/>
-            </a>
-          </li>
-          <li><a href="#">ACCOUNT</a></li>
-          <li><a href="./cart.html">CART</a></li>
-        </ul>
-        <div class="overlay" :class="{ 'show-nav': isNavOpen }">
-          <div class="closebtn" @click="closeNav">&times;</div>
-          <div class="overlay-content">
-            <img class="overlay_logo" src="images/logo-w.png" alt=""/>
-            <div class="nav-links">
-              <a class="home" href="./index.html">HOME</a>
-              <a class="account" href="./index.html">ACCOUNT</a>
-              <a class="cart" href="./cart.html">CART</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </template>
-
+	
+<!--------------------------------------------------------------------------------- Vue Templates ------------------------>
   <template id="products-template">
     <div>
       <h1>Products</h1>
@@ -94,25 +96,8 @@
     </footer>
   </template>
 
-  <!------------------------------------------------------------------------------------------------------------ Vue Components  ------------------------------->
+<!----------------------------------------------------------------------------------- Vue Components ------------------->
   <script>
-    Vue.component('header-component', {
-      template: '#header-template',
-      data() {
-        return {
-          isNavOpen: false
-        };
-      },
-      methods: {
-        openNav() {
-          this.isNavOpen = true;
-        },
-        closeNav() {
-          this.isNavOpen = false;
-        }
-      }
-    });
-
     Vue.component('products-component', {
       template: '#products-template',
       data() {
@@ -172,7 +157,7 @@
       },
       methods: {
         addToCart(productId) {
-          // Handles adding the product to the cart.
+          // Would handle adding the product to the cart. Though no functionality besides a link to cart page.
           window.location.href = './cart.html';
         }
       }
