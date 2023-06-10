@@ -15,32 +15,35 @@
 
 <body>
 	
-<div class="header">
-	<nav class="navi">
-	<div class="mobile-nav-btn" onclick="openNav()">&#9776;</div>
-    <ul class="navi-list">
-		<li><a href="./index.html">HOME</a></li>
-        <li class="centered-logo">
-          <a href="/">
-             <img class="top_logo" src="./images/logo-b.png" alt=""/>
-          </a>
-        </li>
-        <li><a href="#">ACCOUNT</a></li>
-        <li><a href="./cart.html">CART</a></li>
-    </ul>
-  <div class="overlay" id="navbar">
-  		<div href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</div>
-  		<div class="overlay-content">
-			<img class="overlay_logo" src="images/logo-w.png" alt=""/>
-			<div class="nav-links">
-	        	<a class="home" href="./index.html">HOME</a>
-            	<a class="account" href="./index.html">ACCOUNT</a>
-            	<a class="cart" href="./cart.html">CART</a>
-				</div>
-			</div>
-		</div>
-	</nav>
-</div>
+  <div class="header">
+    <nav class="navi">
+    <div class="mobile-nav-btn" onclick="openNav()">&#9776;</div>
+      <ul class="navi-list">
+      <!-- Navigation links -->
+      <li><a href="./index.html">HOME</a></li>
+          <li class="centered-logo">
+            <!-- Logo -->
+            <a href="./index.html">
+               <img class="top_logo" src="./images/logo-b.png" alt=""/>
+            </a>
+          </li>
+          <li><a href="#">ACCOUNT</a></li>
+          <li><a href="./cart.html">CART</a></li>
+      </ul>
+    <div class="overlay" id="navbar">
+        <div href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</div>
+        <div class="overlay-content">
+        <img class="overlay_logo" src="images/logo-w.png" alt=""/>
+        <div class="nav-links">
+              <!-- Overlay navigation links -->
+              <a class="home" href="./index.html">HOME</a>
+                <a class="account" href="./index.html">ACCOUNT</a>
+                <a class="cart" href="./cart.html">CART</a>
+        </div>
+      </div>
+    </div>
+    </nav>
+  </div>
 	
 <!--------------------------------------------------------------------------------- Vue App ------------------------------>
   <div id="app">
@@ -53,106 +56,114 @@
 
 	
 <!--------------------------------------------------------------------------------- Vue Templates ------------------------>
-  <template id="products-template">
-    <div>
-      <h1>Products</h1>
-      <div class="product-container">
-        <div v-for="product in products" :key="product.id" class="product">
-          <img :src="product.image" :alt="product.name">
-          <hr>
-          <h2>{{ product.name }}</h2>
-          <p>{{ product.price }}</p>
-          <button class="btn" @click="addToCart(product.id)">Add To Cart</button>
+<!-- Template for the Products component -->
+<template id="products-template">
+  <div>
+    <h1>Products</h1>
+    <div class="product-container">
+      <div v-for="product in products" :key="product.id" class="product">
+        <!-- Product image -->
+        <img :src="product.image" :alt="product.name">
+        <hr>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.price }}</p>
+        <button class="btn" @click="addToCart(product.id)">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- Template for the Footer component -->
+<template id="footer-template">
+  <footer>
+    <div class="logo">
+      <!-- Footer logo -->
+      <img src="./images/logo-w.png" alt="Footer Logo">
+    </div>
+    <div class="content">
+      <div class="links">
+        <ul>
+          <!-- Footer links -->
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about-us.html">About Us</a></li>
+          <li><a href="./contact-us.html">Contact Us</a></li>
+          <li><a href="#">T&amp;C's</a></li>
+        </ul>
+      </div>
+      <hr>
+      <div class="address">
+        <div class="address-column">
+          <h2>VISIT OUR STORE</h2>
+          <p>303 Victoria Street<br>Hamilton, 3204<br>Waikato<br>New Zealand</p>
+        </div>
+        <div class="map-column">
+          <!-- Footer map -->
+          <img src="./images/map.png" alt="Footer Map">
         </div>
       </div>
     </div>
-  </template>
-
-  <template id="footer-template">
-    <footer>
-      <div class="logo">
-        <img src="./images/logo-w.png" alt="Footer Logo">
-      </div>
-      <div class="content">
-        <div class="links">
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./about-us.html">About Us</a></li>
-            <li><a href="./contact-us.html">Contact Us</a></li>
-            <li><a href="#">T&amp;C's</a></li>
-          </ul>
-        </div>
-        <hr>
-        <div class="address">
-          <div class="address-column">
-            <h2>VISIT OUR STORE</h2>
-            <p>303 Victoria Street<br>Hamilton, 3204<br>Waikato<br>New Zealand</p>
-          </div>
-          <div class="map-column">
-            <img src="./images/map.png" alt="Footer Map">
-          </div>
-        </div>
-      </div>
-    </footer>
-  </template>
+  </footer>
+</template>
 
 <!----------------------------------------------------------------------------------- Vue Components ------------------->
-  <script>
-    Vue.component('products-component', {
-      template: '#products-template',
-      data() {
-        return {
-          products: [
-            {
-              id: 1,
-              name: 'Vanguard Cardigan',
-              price: '$64.99',
-              image: './images/products/product-1.png'
-            },
-            {
-              id: 2,
-              name: 'Cashmere V Neck Cardigan',
-              price: '$49.99',
-              image: './images/products/product-2.png'
-            },
-            {
-              id: 3,
-              name: 'Leather Bomber Jacket',
-              price: '$119.99',
-              image: './images/products/product-3.png'
-            },
-            {
-              id: 4,
-              name: 'Single Breasted Plaid Coat',
-              price: '$89.99',
-              image: './images/products/product-4.png'
-            },
-            {
-              id: 5,
-              name: 'Bliss Faux Fur Coat',
-              price: '$59.99',
-              image: './images/products/product-5.png'
-            },
-            {
-              id: 6,
-              name: 'Cream Long Sweater',
-              price: '$44.99',
-              image: './images/products/product-6.png'
-            },
-            {
-              id: 7,
-              name: 'Checked Shacket Coat',
-              price: '$74.99',
-              image: './images/products/product-7.png'
-            },
-            {
-              id: 8,
-              name: 'Grey Faux Fur Coat',
-              price: '$49.99',
-              image: './images/products/product-8.png'
-            },
-            // Can add more products here.
-          ]
+<script>
+  // Vue component for the Products section
+  Vue.component('products-component', {
+    template: '#products-template',
+    data() {
+      return {
+        products: [
+          // Product data
+          {
+            id: 1,
+            name: 'Vanguard Cardigan',
+            price: '$64.99',
+            image: './images/products/product-1.png'
+          },
+           {
+             id: 2,
+             name: 'Cashmere V Neck Cardigan',
+             price: '$49.99',
+             image: './images/products/product-2.png'
+           },
+           {
+             id: 3,
+             name: 'Leather Bomber Jacket',
+             price: '$119.99',
+             image: './images/products/product-3.png'
+           },
+           {
+             id: 4,
+             name: 'Single Breasted Plaid Coat',
+             price: '$89.99',
+             image: './images/products/product-4.png'
+           },
+           {
+             id: 5,
+             name: 'Bliss Faux Fur Coat',
+             price: '$59.99',
+             image: './images/products/product-5.png'
+           },
+           {
+             id: 6,
+             name: 'Cream Long Sweater',
+             price: '$44.99',
+             image: './images/products/product-6.png'
+           },
+           {
+             id: 7,
+             name: 'Checked Shacket Coat',
+             price: '$74.99',
+             image: './images/products/product-7.png'
+           },
+           {
+             id: 8,
+             name: 'Grey Faux Fur Coat',
+             price: '$49.99',
+             image: './images/products/product-8.png'
+           },
+           // Can add more products here.
+           ]
         };
       },
       methods: {
@@ -163,6 +174,7 @@
       }
     });
 
+    // Vue component for the Footer section
     Vue.component('footer-component', {
       template: '#footer-template'
     });

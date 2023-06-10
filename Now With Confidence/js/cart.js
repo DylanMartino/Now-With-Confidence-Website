@@ -31,7 +31,8 @@ const currentYear = currentDate.getFullYear();
 const currentMonth = currentDate.getMonth() + 1; // Add +1 because getMonth() returns a zero-based index
   
   // Check if the Full Name field is empty
-  if (fullName.value.trim() === '') {
+  const fullNameRegex = /^[A-Za-z]+$/;
+  if (fullName.value.trim() === '' || !fullNameRegex.test(fullName.value.trim())) {
     alert('Please enter your full name');
     fullName.focus();
     return false;
